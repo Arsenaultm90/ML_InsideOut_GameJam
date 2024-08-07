@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var JUMP_FORCE : int = 900
 var player
 
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 func _physics_process(delta):
 	
@@ -17,6 +18,12 @@ func _physics_process(delta):
 		velocity.x = 0
 		
 	move_and_slide()
+	
+	#Play Animation  ( I tried :'( lol ) 
+	#if direction == 0:
+		#animated_sprite_2d.play("Idle")
+		#else:
+			#animated_sprite_2d.play("Run")
 	
 	#Rotate
 	

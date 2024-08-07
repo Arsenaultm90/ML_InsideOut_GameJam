@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddc251si1g7e0"
-path="res://.godot/imported/CharacterInOut-Idle.webp-7458ad5d18ca1402a3e55b13dd9d6be2.ctex"
+uid="uid://b6khrojewrwc8"
+path="res://.godot/imported/CharacterInOut-EAT.png-0368fe9c0033c7af6708a177d985cab3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/CharacterInOut-Idle.webp"
-dest_files=["res://.godot/imported/CharacterInOut-Idle.webp-7458ad5d18ca1402a3e55b13dd9d6be2.ctex"]
+source_file="res://Art/PlayerSprites/CharacterInOut-EAT.png"
+dest_files=["res://.godot/imported/CharacterInOut-EAT.png-0368fe9c0033c7af6708a177d985cab3.ctex"]
 
 [params]
 

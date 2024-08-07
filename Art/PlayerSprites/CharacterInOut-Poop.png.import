@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba6qjk0airrjt"
-path="res://.godot/imported/CharacterInOut-Run.webp-fd53ed722860d827fe54577b15a5fce3.ctex"
+uid="uid://dr1moq6fidxdl"
+path="res://.godot/imported/CharacterInOut-Poop.png-d4968a7b91779ea2640632d0d392cffe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/CharacterInOut-Run.webp"
-dest_files=["res://.godot/imported/CharacterInOut-Run.webp-fd53ed722860d827fe54577b15a5fce3.ctex"]
+source_file="res://Art/PlayerSprites/CharacterInOut-Poop.png"
+dest_files=["res://.godot/imported/CharacterInOut-Poop.png-d4968a7b91779ea2640632d0d392cffe.ctex"]
 
 [params]
 
