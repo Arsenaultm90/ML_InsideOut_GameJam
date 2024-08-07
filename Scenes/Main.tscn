@@ -1,3 +1,29 @@
-[gd_scene format=3 uid="uid://0b3s1fegxvid"]
+[gd_scene load_steps=5 format=3 uid="uid://0b3s1fegxvid"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://cp5rdw1riyqvl" path="res://Nodes/MainCharacter/MainCharacter.tscn" id="1_65ckt"]
+[ext_resource type="Texture2D" uid="uid://eht2splcjbmg" path="res://Art/Environment/TestGround.png" id="2_h86al"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3xrga"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xs2r"]
+size = Vector2(633, 20)
+
+[node name="MainLevel" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_65ckt")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_3xrga")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-4, 70)
+shape = SubResource("RectangleShape2D_2xs2r")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture_repeat = 2
+position = Vector2(-3, 192)
+scale = Vector2(0.637695, 0.554167)
+texture = ExtResource("2_h86al")
