@@ -7,9 +7,10 @@
   <a href="https://itch.io/jam/do-you-wanna-jam-2024">
 	<img src="ReadMeResources/DoYouWANNAJam.png" alt="Logo" width="500" height="250">
   </a>
-
-	<img src="ReadMeResources/InsideOut.png" alt="Logo" width="250" height="100">
+  <br> 
+  <img src="ReadMeResources/InsideOut.png" alt="Inside Out Logo" width="250" height="100">
 </div>
+
 
 
 <!-- ABOUT THE PROJECT -->
