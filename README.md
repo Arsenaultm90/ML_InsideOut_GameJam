@@ -8,7 +8,7 @@
 	<img src="ReadMeResources/DoYouWANNAJam.png" alt="Logo" width="500" height="250">
   </a>
 
-	<img src="ReadMeResources/InsideOut.png" alt="Logo" width="300" height="150">
+	<img src="ReadMeResources/InsideOut.png" alt="Logo" width="250" height="100">
 </div>
 
 
