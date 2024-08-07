@@ -1,0 +1,93 @@
+[gd_scene load_steps=13 format=3 uid="uid://cfq1enmvsikp5"]
+
+[ext_resource type="Texture2D" uid="uid://nedd72t8lkqv" path="res://Art/Food/pizza-Sheet.png" id="1_c0b4w"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1cj08"]
+radius = 7.0
+height = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vxrb"]
+atlas = ExtResource("1_c0b4w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uq2d0"]
+atlas = ExtResource("1_c0b4w")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnyw2"]
+atlas = ExtResource("1_c0b4w")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg0vr"]
+atlas = ExtResource("1_c0b4w")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8e8gb"]
+atlas = ExtResource("1_c0b4w")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0wqe"]
+atlas = ExtResource("1_c0b4w")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skrhs"]
+atlas = ExtResource("1_c0b4w")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyxq2"]
+atlas = ExtResource("1_c0b4w")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_if2kk"]
+atlas = ExtResource("1_c0b4w")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hjybk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vxrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uq2d0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnyw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tg0vr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8e8gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0wqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skrhs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyxq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_if2kk")
+}],
+"loop": true,
+"name": &"Loop",
+"speed": 6.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_1cj08")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(0, 2)
+scale = Vector2(0.78125, 0.78125)
+sprite_frames = SubResource("SpriteFrames_hjybk")
+animation = &"Loop"
+autoplay = "Loop"
+frame = 3
+frame_progress = 0.590966
