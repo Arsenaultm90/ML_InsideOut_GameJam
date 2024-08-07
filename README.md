@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://itch.io/jam/do-you-wanna-jam-2024">
-	<img src="ReadMeResources/DoYouWANNAJam.png" alt="Logo" width="500" height="250">
+	<img src="ReadMeResources/DoYouWANNAJam.png" alt="Logo" width="700" height="350">
   </a>
   <br> 
   <img src="ReadMeResources/InsideOut.png" alt="Inside Out Logo" width="250" height="100">
