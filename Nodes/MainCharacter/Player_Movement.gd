@@ -37,6 +37,10 @@ func _physics_process(delta):
 	if GlobalManager.activeBlock == true:
 		block_sprite.position = get_global_mouse_position()
 		
+	if Input.is_action_just_pressed("Reset"):
+		GlobalManager.activeBlock = false
+		get_tree().reload_current_scene()
+		
 	if not input_locked:
 		var direction = Input.get_axis("Left", "Right")
 		var is_initiating_jump = is_on_floor() and Input.is_action_just_pressed("Jump")
