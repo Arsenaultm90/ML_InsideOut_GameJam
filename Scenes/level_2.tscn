@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://cp5rdw1riyqvl" path="res://Nodes/MainCharacter/MainCharacter.tscn" id="1_qvrph"]
 [ext_resource type="Texture2D" uid="uid://b375q3sisd0rx" path="res://Art/Environment/tilesetinout.png" id="2_dxy3w"]
-[ext_resource type="PackedScene" uid="uid://bhgxxn14xrymr" path="res://Nodes/FoodNodes/taco.tscn" id="4_0f4o8"]
+[ext_resource type="PackedScene" uid="uid://dl7j6oyrq11co" path="res://Nodes/FoodNodes/taco.tscn" id="4_0f4o8"]
 [ext_resource type="PackedScene" uid="uid://c7mmomcmdg07i" path="res://Nodes/FoodNodes/Pie.tscn" id="5_swxq8"]
 [ext_resource type="PackedScene" uid="uid://cfq1enmvsikp5" path="res://Nodes/FoodNodes/Pizza.tscn" id="6_b4h8r"]
-[ext_resource type="PackedScene" uid="uid://bu5ofurvfgtac" path="res://Nodes/Door.tscn" id="6_xhmu8"]
-[ext_resource type="PackedScene" uid="uid://kw6swu836y8n" path="res://Nodes/FoodNodes/Chicken.tscn" id="7_xoehy"]
-[ext_resource type="PackedScene" uid="uid://cbe6mc3gmoamf" path="res://Nodes/FoodNodes/Glizzy.tscn" id="8_l1a1m"]
-[ext_resource type="PackedScene" uid="uid://de7xejlpkhsjl" path="res://Nodes/FoodNodes/Cookie.tscn" id="9_uqicd"]
-[ext_resource type="PackedScene" uid="uid://vyqx50lwirso" path="res://Nodes/killzone.tscn" id="10_2y44w"]
+[ext_resource type="PackedScene" path="res://Nodes/Door.tscn" id="6_xhmu8"]
+[ext_resource type="PackedScene" path="res://Nodes/FoodNodes/Chicken.tscn" id="7_xoehy"]
+[ext_resource type="PackedScene" path="res://Nodes/FoodNodes/Glizzy.tscn" id="8_l1a1m"]
+[ext_resource type="PackedScene" path="res://Nodes/FoodNodes/Cookie.tscn" id="9_uqicd"]
+[ext_resource type="PackedScene" path="res://Nodes/killzone.tscn" id="10_2y44w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iw2ab"]
 texture = ExtResource("2_dxy3w")
@@ -388,7 +388,6 @@ layer_2/tile_data = PackedInt32Array(-655380, 262144, 14, -589844, 262144, 15, -
 
 [node name="Taco" parent="." instance=ExtResource("4_0f4o8")]
 position = Vector2(-300, 36)
-collision_layer = 1
 
 [node name="Node2D" parent="." instance=ExtResource("6_xhmu8")]
 position = Vector2(278, 41)
