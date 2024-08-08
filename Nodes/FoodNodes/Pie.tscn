@@ -104,8 +104,8 @@ position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_y4mki")
 animation = &"Loop"
 autoplay = "Loop"
-frame = 5
-frame_progress = 0.00710854
+frame = 2
+frame_progress = 0.507799
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
 position = Vector2(0, 8.5)
