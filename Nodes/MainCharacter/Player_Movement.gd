@@ -4,7 +4,7 @@ enum States {IDLE, RUNNING, JUMPING, FALLING, EATING, POOP}
 var state: States = States.IDLE
 @export var SPEED : int = 155
 @export var GRAVITY : int = 700
-@export var JUMP_FORCE : int = 300
+@export var JUMP_FORCE : int = 225
 @onready var area = $Area2D
 @onready var sprite = $Area2D/AnimatedSprite2D
 var current_animation: String = ""
