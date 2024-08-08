@@ -9,6 +9,7 @@ var state: States = States.IDLE
 @onready var sprite = $Area2D/AnimatedSprite2D
 var current_animation: String = ""
 var input_locked: bool = false
+var collision_node : Area2D = null;
 
 
 func _ready():
@@ -17,6 +18,7 @@ func _ready():
 	
 func _on_animation_finished() -> void:
 	if current_animation == "Eat":
+		collision_node.queue_free()
 		input_locked = false  # Re-enable input when the animation finishes
 	
 func _on_area_entered(colArea: Area2D) -> void:
@@ -24,7 +26,7 @@ func _on_area_entered(colArea: Area2D) -> void:
 	if colArea.is_in_group("Food"):  # Ensure your StaticBody2D is in this group
 		state = States.EATING
 		set_state(state)
-		colArea.queue_free()
+		collision_node = colArea
 	
 
 func _physics_process(delta):
@@ -92,3 +94,4 @@ func play_animation(anim_name: String) -> void:
 		if current_animation == "Eat":
 			input_locked = true  # Disable input while the animation is playing
 		sprite.play(anim_name)
+		
