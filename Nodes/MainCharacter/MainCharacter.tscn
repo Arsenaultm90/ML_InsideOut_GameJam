@@ -221,7 +221,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fki68")
 }],
-"loop": true,
+"loop": false,
 "name": &"Poop",
 "speed": 4.0
 }, {
@@ -256,7 +256,7 @@ script = ExtResource("1_4cx1o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 sprite_frames = SubResource("SpriteFrames_7nc3f")
-animation = &"Eat"
+animation = &"Poop"
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
