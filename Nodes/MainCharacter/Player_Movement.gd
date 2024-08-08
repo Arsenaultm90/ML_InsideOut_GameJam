@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-enum States {IDLE, RUNNING, JUMPING, FALLING, EATING}
+enum States {IDLE, RUNNING, JUMPING, FALLING, EATING, POOP}
 var state: States = States.IDLE
 @export var SPEED : int = 155
 @export var GRAVITY : int = 700
@@ -17,6 +17,8 @@ func _ready():
 	sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	
 func _on_animation_finished() -> void:
+	if current_animation == "Poop":
+		input_locked = false  # Re-enable input when the animation finishes
 	if current_animation == "Eat":
 		collision_node.queue_free()
 		input_locked = false  # Re-enable input when the animation finishes
@@ -27,8 +29,8 @@ func _on_area_entered(colArea: Area2D) -> void:
 		state = States.EATING
 		set_state(state)
 		collision_node = colArea
+		GlobalManager.numOfBlocks += 1
 	
-
 func _physics_process(delta):
 	if not input_locked:
 		var direction = Input.get_axis("Left", "Right")
@@ -44,6 +46,9 @@ func _physics_process(delta):
 				state = States.JUMPING
 		elif direction != 0:
 			state = States.RUNNING
+		elif Input.is_action_just_pressed("Poop_Block") and GlobalManager.numOfBlocks > 0:
+			GlobalManager.numOfBlocks -= 1
+			state = States.POOP
 		else:
 			state = States.IDLE
 
@@ -64,6 +69,10 @@ func _physics_process(delta):
 
 		# Apply gravity
 		if not is_on_floor():
+			if direction == -1:
+				sprite.flip_h = true
+			elif direction == 1:
+				sprite.flip_h = false
 			velocity.x = direction * SPEED
 			velocity.y += GRAVITY * delta
 
@@ -87,11 +96,13 @@ func set_state(new_state: int) -> void:
 			play_animation("Fall")
 		States.EATING:
 			play_animation("Eat")
+		States.POOP:
+			play_animation("Poop")
 			
 func play_animation(anim_name: String) -> void:
 	if sprite and sprite.animation != anim_name:
 		current_animation = anim_name
-		if current_animation == "Eat":
+		if current_animation == "Eat" or current_animation == "Poop":
 			input_locked = true  # Disable input while the animation is playing
 		sprite.play(anim_name)
 		
