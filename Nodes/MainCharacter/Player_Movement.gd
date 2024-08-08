@@ -13,11 +13,12 @@ var collision_node : Area2D = null;
 var Sprite2DScene : PackedScene = preload("res://Nodes/BlockNodes/poop_block.tscn")
 var block_sprite : StaticBody2D
 
-
+# Setup signals for collision and sprite animations
 func _ready():
 	area.connect("area_entered", Callable(self, "_on_area_entered"))
 	sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	
+# Proceeds with resuming the game once the animation finishes
 func _on_animation_finished() -> void:
 	if current_animation == "Poop":
 		GlobalManager.numOfBlocks -= 1
@@ -68,7 +69,7 @@ func _physics_process(delta):
 		if is_on_floor():
 			GlobalManager.inAir = false
 		
-		if Input.is_action_just_pressed("Place_Block") and sprite != null:
+		if Input.is_action_just_pressed("Place_Block") and block_sprite != null:
 			block_sprite.z_index = 1 
 			GlobalManager.activeBlock = false
 			block_sprite.collision_layer = 1
