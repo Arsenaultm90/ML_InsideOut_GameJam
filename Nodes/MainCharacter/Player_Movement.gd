@@ -22,7 +22,7 @@ func _on_animation_finished() -> void:
 		input_locked = false  # Re-enable input when the animation finishes
 	
 func _on_area_entered(colArea: Area2D) -> void:
-	# Check if the colliding object is the StaticBody2D you want to interact with
+	# Check collision layers and masking
 	if colArea.is_in_group("Food"):  # Ensure your StaticBody2D is in this group
 		state = States.EATING
 		set_state(state)
