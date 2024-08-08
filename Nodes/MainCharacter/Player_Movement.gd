@@ -16,6 +16,7 @@ func _ready():
 	sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	
 func _on_animation_finished(anim_name: String) -> void:
+	print("Im here")
 	if anim_name == current_animation:
 		input_locked = false  # Re-enable input when the animation finishes
 	
