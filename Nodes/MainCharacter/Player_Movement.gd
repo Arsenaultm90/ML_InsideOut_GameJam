@@ -20,6 +20,17 @@ func _ready():
 	
 func _on_animation_finished() -> void:
 	if current_animation == "Poop":
+		GlobalManager.numOfBlocks -= 1
+		block_sprite = Sprite2DScene.instantiate() as StaticBody2D  # Ensure typecasting
+		GlobalManager.activeBlock = true
+		block_sprite.collision_layer = 2
+		if block_sprite:
+			get_parent().add_child(block_sprite)
+			block_sprite.position = get_global_mouse_position()
+			block_sprite.visible = true  # Ensure the sprite is set to visible
+			block_sprite.z_index = 5  # Ensure the sprite is drawn above other elements
+		else:
+			print("Failed to instantiate the sprite scene!")
 		input_locked = false  # Re-enable input when the animation finishes
 	if current_animation == "Eat":
 		collision_node.queue_free()
@@ -56,17 +67,6 @@ func _physics_process(delta):
 		
 		# Determine the new state based on input and current state
 		if is_pooping_blocks:
-			GlobalManager.numOfBlocks -= 1
-			block_sprite = Sprite2DScene.instantiate() as StaticBody2D  # Ensure typecasting
-			GlobalManager.activeBlock = true
-			block_sprite.collision_layer = 2
-			if block_sprite:
-				get_parent().add_child(block_sprite)
-				block_sprite.position = get_global_mouse_position()
-				block_sprite.visible = true  # Ensure the sprite is set to visible
-				block_sprite.z_index = 5  # Ensure the sprite is drawn above other elements
-			else:
-				print("Failed to instantiate the sprite scene!")
 			state = States.POOP
 		elif is_initiating_jump:
 			GlobalManager.inAir = true
