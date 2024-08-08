@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://52ov75jhynw7"]
+[gd_scene load_steps=9 format=3 uid="uid://52ov75jhynw7"]
 
 [ext_resource type="Script" path="res://Scenes/LevelManager.gd" id="1_1ih3i"]
 [ext_resource type="PackedScene" uid="uid://cp5rdw1riyqvl" path="res://Nodes/MainCharacter/MainCharacter.tscn" id="1_65ckt"]
 [ext_resource type="Texture2D" uid="uid://eht2splcjbmg" path="res://Art/Environment/TestGround.png" id="2_h86al"]
 [ext_resource type="PackedScene" uid="uid://dl7j6oyrq11co" path="res://Nodes/FoodNodes/taco.tscn" id="4_bdf1l"]
 [ext_resource type="PackedScene" uid="uid://cjcghrtws4fyd" path="res://GUI/UI_Nodes/block_count.tscn" id="5_35bp6"]
+[ext_resource type="PackedScene" uid="uid://me1g6ewkci3j" path="res://Nodes/killzone.tscn" id="6_kpxoo"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3xrga"]
 
@@ -47,3 +48,6 @@ offset_left = -209.0
 offset_top = -96.0
 offset_right = -97.0
 offset_bottom = -32.0
+
+[node name="Killzones" parent="." instance=ExtResource("6_kpxoo")]
+position = Vector2(143, 49)

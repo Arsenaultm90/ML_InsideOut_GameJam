@@ -43,6 +43,13 @@ func _on_area_entered(colArea: Area2D) -> void:
 		set_state(state)
 		collision_node = colArea
 		GlobalManager.numOfBlocks += 1
+	elif colArea.is_in_group("Killzone"):
+		$Timer.start()
+		
+func _on_timer_timeout():
+	GlobalManager.activeBlock = false
+	GlobalManager.numOfBlocks = 0
+	get_tree().reload_current_scene()
 	
 func _physics_process(delta):
 	if GlobalManager.activeBlock == true:
@@ -50,6 +57,7 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("Reset"):
 		GlobalManager.activeBlock = false
+		GlobalManager.numOfBlocks = 0
 		get_tree().reload_current_scene()
 		
 	if not input_locked:

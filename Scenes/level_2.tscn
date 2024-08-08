@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c0envnhwi3lue"]
+[gd_scene load_steps=12 format=3 uid="uid://c0envnhwi3lue"]
 
 [ext_resource type="PackedScene" uid="uid://cp5rdw1riyqvl" path="res://Nodes/MainCharacter/MainCharacter.tscn" id="1_qvrph"]
 [ext_resource type="Texture2D" uid="uid://b375q3sisd0rx" path="res://Art/Environment/tilesetinout.png" id="2_dxy3w"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" path="res://Nodes/FoodNodes/Chicken.tscn" id="7_xoehy"]
 [ext_resource type="PackedScene" path="res://Nodes/FoodNodes/Glizzy.tscn" id="8_l1a1m"]
 [ext_resource type="PackedScene" path="res://Nodes/FoodNodes/Cookie.tscn" id="9_uqicd"]
-[ext_resource type="PackedScene" path="res://Nodes/killzone.tscn" id="10_2y44w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iw2ab"]
 texture = ExtResource("2_dxy3w")
@@ -362,8 +361,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_iw2ab")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6675x"]
-
 [node name="Level1" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource("1_qvrph")]
@@ -408,10 +405,3 @@ position = Vector2(-276, -39)
 
 [node name="Cookie" parent="." instance=ExtResource("9_uqicd")]
 position = Vector2(-62, -25)
-
-[node name="Killzone" parent="." instance=ExtResource("10_2y44w")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(-8, 160)
-scale = Vector2(3.08, 1)
-shape = SubResource("WorldBoundaryShape2D_6675x")
