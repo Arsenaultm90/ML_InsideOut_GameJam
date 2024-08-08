@@ -1,6 +1,8 @@
 extends Node
 
 var numOfBlocks = 0
+var activeBlock : bool = false
+var inAir : bool = false
 var my_label : Label 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,7 +21,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if my_label:
 		# Update the label's text each frame based on numOfBlocks
 		my_label.text = str(numOfBlocks)

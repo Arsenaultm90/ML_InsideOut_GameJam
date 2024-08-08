@@ -35,12 +35,16 @@ func _physics_process(delta):
 	if not input_locked:
 		var direction = Input.get_axis("Left", "Right")
 		var is_initiating_jump = is_on_floor() and Input.is_action_just_pressed("Jump")
-		var is_pooping_blocks = Input.is_action_just_pressed("Poop_Block") and GlobalManager.numOfBlocks > 0
+		var is_pooping_blocks = Input.is_action_just_pressed("Poop_Block") and GlobalManager.activeBlock == false and GlobalManager.numOfBlocks > 0 and velocity.y == 0
+		
+		if is_on_floor():
+			GlobalManager.inAir = false
 		
 		# Determine the new state based on input and current state
 		if is_pooping_blocks:
 			state = States.POOP
 		elif is_initiating_jump:
+			GlobalManager.inAir = true
 			state = States.JUMPING
 		elif not is_on_floor():
 			if velocity.y > 0:
