@@ -15,6 +15,7 @@ func _physics_process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Input.is_action_just_pressed("Poop_Block") and GlobalManager.numOfBlocks > 0:
+		GlobalManager.numOfBlocks -= 1
 		sprite = Sprite2DScene.instantiate() as StaticBody2D  # Ensure typecasting
 		activeBlock = true
 		sprite.collision_layer = 2
@@ -26,7 +27,7 @@ func _process(_delta):
 		else:
 			print("Failed to instantiate the sprite scene!")
 	
-	if Input.is_action_just_pressed("Place_Block"):
+	if Input.is_action_just_pressed("Place_Block") and sprite != null:
 		sprite.z_index = 1 
 		activeBlock = false
 		sprite.collision_layer = 1
