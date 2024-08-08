@@ -83,7 +83,7 @@ func set_state(new_state: int) -> void:
 		States.JUMPING:
 			play_animation("Jump")
 		States.FALLING:
-			play_animation("Jump")
+			play_animation("Fall")
 		States.EATING:
 			play_animation("Eat")
 			
