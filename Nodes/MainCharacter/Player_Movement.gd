@@ -68,7 +68,7 @@ func _physics_process(delta):
 		if is_on_floor():
 			GlobalManager.inAir = false
 		
-		if Input.is_action_just_pressed("Place_Block") and sprite != null:
+		if Input.is_action_just_pressed("Place_Block") and block_sprite != null:
 			block_sprite.z_index = 1 
 			GlobalManager.activeBlock = false
 			block_sprite.collision_layer = 1

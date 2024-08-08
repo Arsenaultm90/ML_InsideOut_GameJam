@@ -97,7 +97,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imx88"]
 size = Vector2(5, 12)
 
-[node name="Area2D" type="Area2D" groups=["Food"]]
+[node name="Pie" type="Area2D" groups=["Food"]]
 collision_layer = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
