@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/LevelManager.gd" id="1_1ih3i"]
 [ext_resource type="PackedScene" uid="uid://cp5rdw1riyqvl" path="res://Nodes/MainCharacter/MainCharacter.tscn" id="1_65ckt"]
 [ext_resource type="Texture2D" uid="uid://eht2splcjbmg" path="res://Art/Environment/TestGround.png" id="2_h86al"]
-[ext_resource type="PackedScene" uid="uid://bhgxxn14xrymr" path="res://Nodes/FoodNodes/taco.tscn" id="4_bdf1l"]
+[ext_resource type="PackedScene" path="res://Nodes/FoodNodes/taco.tscn" id="4_bdf1l"]
 [ext_resource type="PackedScene" uid="uid://cjcghrtws4fyd" path="res://GUI/UI_Nodes/block_count.tscn" id="5_35bp6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3xrga"]

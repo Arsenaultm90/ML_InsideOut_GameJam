@@ -257,7 +257,7 @@ script = ExtResource("1_4cx1o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 sprite_frames = SubResource("SpriteFrames_7nc3f")
-animation = &"Fall"
+animation = &"Run"
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
