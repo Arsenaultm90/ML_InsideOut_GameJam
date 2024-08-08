@@ -23,11 +23,6 @@ func _on_animation_finished(anim_name: String) -> void:
 func _on_area_entered(colArea: Area2D) -> void:
 	# Check if the colliding object is the StaticBody2D you want to interact with
 	if colArea.is_in_group("Food"):  # Ensure your StaticBody2D is in this group
-		var root_node = colArea.get_parent()
-		
-		if root_node:
-			root_node.queue_free()  # Remove the entire root node
-			
 		print("Collided with Food")
 		state = States.EATING
 		set_state(state)
