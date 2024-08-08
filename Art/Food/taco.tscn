@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqpcwkn6crnem"]
+
+[ext_resource type="Texture2D" uid="uid://bx8iay7ojphel" path="res://Art/Food/tac2o.png" id="1_537fd"]
+[ext_resource type="Script" path="res://Nodes/MainCharacter/CollisionDetection.gd" id="1_vxipu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvu8w"]
+size = Vector2(36, 20)
+
+[node name="Taco" type="Area2D" groups=["Food"]]
+script = ExtResource("1_vxipu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_537fd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_vvu8w")

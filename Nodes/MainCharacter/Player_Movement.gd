@@ -10,6 +10,8 @@ var state: States = States.IDLE
 var current_animation: String = ""
 var input_locked: bool = false
 var collision_node : Area2D = null;
+var Sprite2DScene : PackedScene = preload("res://Nodes/BlockNodes/poop_block.tscn")
+var block_sprite : StaticBody2D
 
 
 func _ready():
@@ -32,6 +34,9 @@ func _on_area_entered(colArea: Area2D) -> void:
 		GlobalManager.numOfBlocks += 1
 	
 func _physics_process(delta):
+	if GlobalManager.activeBlock == true:
+		block_sprite.position = get_global_mouse_position()
+		
 	if not input_locked:
 		var direction = Input.get_axis("Left", "Right")
 		var is_initiating_jump = is_on_floor() and Input.is_action_just_pressed("Jump")
@@ -40,8 +45,24 @@ func _physics_process(delta):
 		if is_on_floor():
 			GlobalManager.inAir = false
 		
+		if Input.is_action_just_pressed("Place_Block") and sprite != null:
+			block_sprite.z_index = 1 
+			GlobalManager.activeBlock = false
+			block_sprite.collision_layer = 1
+		
 		# Determine the new state based on input and current state
 		if is_pooping_blocks:
+			GlobalManager.numOfBlocks -= 1
+			block_sprite = Sprite2DScene.instantiate() as StaticBody2D  # Ensure typecasting
+			GlobalManager.activeBlock = true
+			block_sprite.collision_layer = 2
+			if block_sprite:
+				get_parent().add_child(block_sprite)
+				block_sprite.position = get_global_mouse_position()
+				block_sprite.visible = true  # Ensure the sprite is set to visible
+				block_sprite.z_index = 5  # Ensure the sprite is drawn above other elements
+			else:
+				print("Failed to instantiate the sprite scene!")
 			state = States.POOP
 		elif is_initiating_jump:
 			GlobalManager.inAir = true
