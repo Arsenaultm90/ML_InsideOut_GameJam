@@ -2,10 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://nedd72t8lkqv" path="res://Art/Food/pizza-Sheet.png" id="1_c0b4w"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1cj08"]
-radius = 7.0
-height = 18.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vxrb"]
 atlas = ExtResource("1_c0b4w")
 region = Rect2(0, 0, 32, 32)
@@ -77,13 +73,12 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_grrrt"]
+radius = 2.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -15)
-shape = SubResource("CapsuleShape2D_1cj08")
+[node name="Area2D" type="Area2D" groups=["Food"]]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 2)
 scale = Vector2(0.78125, 0.78125)
 sprite_frames = SubResource("SpriteFrames_hjybk")
@@ -91,3 +86,7 @@ animation = &"Loop"
 autoplay = "Loop"
 frame = 3
 frame_progress = 0.590966
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_grrrt")

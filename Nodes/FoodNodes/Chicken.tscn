@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://kw6swu836y8n"]
+
+[ext_resource type="Script" path="res://Nodes/MainCharacter/CollisionDetection.gd" id="1_6k3k1"]
+[ext_resource type="Texture2D" uid="uid://cu0f2sgmpcjpu" path="res://Art/Food/chicken.png" id="2_dhb6w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvu8w"]
+size = Vector2(2, 6.125)
+
+[node name="Chicken" type="Area2D" groups=["Food"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_6k3k1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(0.524414, 0.524414)
+texture = ExtResource("2_dhb6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_vvu8w")

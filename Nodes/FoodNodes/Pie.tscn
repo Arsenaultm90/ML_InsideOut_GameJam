@@ -94,19 +94,20 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qa4yb"]
-size = Vector2(28, 11)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imx88"]
+size = Vector2(5, 12)
 
-[node name="Node2D" type="Node2D"]
+[node name="Area2D" type="Area2D" groups=["Food"]]
+collision_layer = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_y4mki")
 animation = &"Loop"
 autoplay = "Loop"
-frame = 2
-frame_progress = 0.507799
+frame = 9
+frame_progress = 0.805968
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
-position = Vector2(0, 8.5)
-shape = SubResource("RectangleShape2D_qa4yb")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -6)
+shape = SubResource("RectangleShape2D_imx88")
