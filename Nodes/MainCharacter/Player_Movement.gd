@@ -15,17 +15,16 @@ func _ready():
 	area.connect("area_entered", Callable(self, "_on_area_entered"))
 	sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	
-func _on_animation_finished(anim_name: String) -> void:
-	print("Im here")
-	if anim_name == current_animation:
+func _on_animation_finished() -> void:
+	if current_animation == "Eat":
 		input_locked = false  # Re-enable input when the animation finishes
 	
 func _on_area_entered(colArea: Area2D) -> void:
 	# Check if the colliding object is the StaticBody2D you want to interact with
 	if colArea.is_in_group("Food"):  # Ensure your StaticBody2D is in this group
-		print("Collided with Food")
 		state = States.EATING
 		set_state(state)
+		colArea.queue_free()
 	
 
 func _physics_process(delta):
@@ -83,7 +82,7 @@ func set_state(new_state: int) -> void:
 		States.JUMPING:
 			play_animation("Jump")
 		States.FALLING:
-			play_animation("Fall")
+			play_animation("Jump")
 		States.EATING:
 			play_animation("Eat")
 			
