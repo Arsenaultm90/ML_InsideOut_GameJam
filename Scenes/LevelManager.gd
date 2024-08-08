@@ -11,6 +11,12 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("Poop_Block"):
 		var m_pos = get_viewport().get_mouse_position()
-		var sprite = Sprite2DScene.instantiate()
-		add_child(sprite)
-		sprite.position = m_pos 
+		var sprite = Sprite2DScene.instantiate() as Area2D  # Ensure typecasting
+		if sprite:
+			add_child(sprite)
+			sprite.position = get_global_mouse_position()
+			sprite.visible = true  # Ensure the sprite is set to visible
+			sprite.z_index = 1  # Ensure the sprite is drawn above other elements
+			print("Sprite added at position: ", m_pos)
+		else:
+			print("Failed to instantiate the sprite scene!")
