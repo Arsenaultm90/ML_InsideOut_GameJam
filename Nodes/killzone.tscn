@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://me1g6ewkci3j"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1dh56"]
+b = Vector2(126, 0)
+
+[node name="Killzones" type="Area2D" groups=["Killzone"]]
+collision_layer = 3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_1dh56")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

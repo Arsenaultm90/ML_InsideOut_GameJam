@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://j5sws60adg5w"]
+
+[ext_resource type="Texture2D" uid="uid://bjyjtfj6uvxa2" path="res://Art/Food/glizzy.png" id="2_3ov0n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvu8w"]
+size = Vector2(2, 6.125)
+
+[node name="Glizz" type="Area2D" groups=["Food"]]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(0.524414, 0.524414)
+texture = ExtResource("2_3ov0n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_vvu8w")

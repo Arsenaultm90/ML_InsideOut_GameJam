@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://bu5ofurvfgtac"]
+
+[ext_resource type="Texture2D" uid="uid://cnglap64e7igc" path="res://Art/Environment/orbt.png" id="1_8nxc1"]
+[ext_resource type="Script" path="res://Scripts/NextLevel.gd" id="1_eoicp"]
+[ext_resource type="PackedScene" uid="uid://cqnv2t2ayp77s" path="res://Scenes/Anim_SceneTransition.tscn" id="3_mo3pa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8fsk"]
+atlas = ExtResource("1_8nxc1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87uky"]
+atlas = ExtResource("1_8nxc1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mskpq"]
+atlas = ExtResource("1_8nxc1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvvlm"]
+atlas = ExtResource("1_8nxc1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dt6n5"]
+atlas = ExtResource("1_8nxc1")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g13t"]
+atlas = ExtResource("1_8nxc1")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vsu14"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8fsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87uky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mskpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvvlm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dt6n5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g13t")
+}],
+"loop": true,
+"name": &"DoorLoop",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d6p54"]
+radius = 6.0
+
+[node name="NextLevel" type="Area2D"]
+collision_layer = 3
+script = ExtResource("1_eoicp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_vsu14")
+animation = &"DoorLoop"
+autoplay = "DoorLoop"
+frame_progress = 0.0179682
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_d6p54")
+
+[node name="SceneTransitionRect" parent="." instance=ExtResource("3_mo3pa")]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

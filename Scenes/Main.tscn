@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://52ov75jhynw7"]
+
+[ext_resource type="PackedScene" uid="uid://cp5rdw1riyqvl" path="res://Nodes/MainCharacter/MainCharacter.tscn" id="1_65ckt"]
+[ext_resource type="Texture2D" uid="uid://eht2splcjbmg" path="res://Art/Environment/TestGround.png" id="2_h86al"]
+[ext_resource type="PackedScene" uid="uid://bhgxxn14xrymr" path="res://Nodes/FoodNodes/taco.tscn" id="4_bdf1l"]
+[ext_resource type="PackedScene" uid="uid://cjcghrtws4fyd" path="res://GUI/UI_Nodes/block_count.tscn" id="5_35bp6"]
+[ext_resource type="PackedScene" uid="uid://me1g6ewkci3j" path="res://Nodes/killzone.tscn" id="6_kpxoo"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3xrga"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xs2r"]
+size = Vector2(633, 21)
+
+[node name="MainLevel" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_65ckt")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_3xrga")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-4, 69.5)
+shape = SubResource("RectangleShape2D_2xs2r")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture_repeat = 2
+position = Vector2(-3, 192)
+scale = Vector2(0.637695, 0.554167)
+texture = ExtResource("2_h86al")
+
+[node name="Taco" parent="." instance=ExtResource("4_bdf1l")]
+position = Vector2(-201, 47)
+
+[node name="Taco2" parent="." instance=ExtResource("4_bdf1l")]
+position = Vector2(-270, 45)
+
+[node name="Taco3" parent="." instance=ExtResource("4_bdf1l")]
+position = Vector2(106, 45)
+
+[node name="block_count" parent="." instance=ExtResource("5_35bp6")]
+offset_left = -209.0
+offset_top = -96.0
+offset_right = -97.0
+offset_bottom = -32.0
+
+[node name="Killzones" parent="." instance=ExtResource("6_kpxoo")]
+position = Vector2(143, 49)

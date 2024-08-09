@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4h0xfwwh5esq"]
+
+[ext_resource type="Texture2D" uid="uid://mfxllnk1jdng" path="res://Art/Environment/squareblocj.png" id="1_gxm5b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvji3"]
+size = Vector2(32, 32)
+
+[node name="Poop_Block" type="StaticBody2D"]
+z_index = -2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = -2
+shape = SubResource("RectangleShape2D_wvji3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+texture = ExtResource("1_gxm5b")
