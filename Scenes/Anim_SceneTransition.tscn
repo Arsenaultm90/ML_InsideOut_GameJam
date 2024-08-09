@@ -1,13 +1,13 @@
-[gd_scene format=3 uid="uid://dv6lds0oelym6"]
+[gd_scene format=3 uid="uid://cqnv2t2ayp77s"]
 
 [node name="SceneTransitionRect" type="ColorRect"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -874.0
-offset_top = -480.0
-offset_right = -874.0
-offset_bottom = -480.0
+offset_left = -956.0
+offset_top = -630.0
+offset_right = -956.0
+offset_bottom = -630.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)

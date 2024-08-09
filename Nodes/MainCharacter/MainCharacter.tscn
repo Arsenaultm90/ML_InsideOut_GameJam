@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cp5rdw1riyqvl"]
+[gd_scene load_steps=45 format=3 uid="uid://cp5rdw1riyqvl"]
 
 [ext_resource type="Script" path="res://Nodes/MainCharacter/Player_Movement.gd" id="1_4cx1o"]
 [ext_resource type="Texture2D" uid="uid://b6khrojewrwc8" path="res://Art/PlayerSprites/CharacterInOut-EAT.png" id="2_gihqu"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://c8n6150tahmro" path="res://Art/PlayerSprites/CharacterInOut-jump.png" id="4_5fif5"]
 [ext_resource type="Texture2D" uid="uid://xr36o1f8njwn" path="res://Art/PlayerSprites/CharacterInOut-Run.png" id="5_004me"]
 [ext_resource type="Texture2D" uid="uid://dr1moq6fidxdl" path="res://Art/PlayerSprites/CharacterInOut-Poop.png" id="5_op56e"]
+[ext_resource type="Texture2D" uid="uid://ceeyep2rd1ngf" path="res://Art/PlayerSprites/CharacterInOutPOPO2t.png" id="6_bg4bi"]
+[ext_resource type="Texture2D" uid="uid://dncs7bamcw7r7" path="res://Art/PlayerSprites/CharacterInOut-Shee23232t.png" id="7_fhvpm"]
+[ext_resource type="Texture2D" uid="uid://ddq8dml3sxigg" path="res://Art/PlayerSprites/CharacterInOut-Sheepooopblockt.png" id="8_2t1yf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1r71g"]
 atlas = ExtResource("2_gihqu")
@@ -83,21 +86,33 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("5_op56e")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pyf7o"]
-atlas = ExtResource("5_op56e")
-region = Rect2(64, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpsuw"]
+atlas = ExtResource("6_bg4bi")
+region = Rect2(32, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s3ih5"]
-atlas = ExtResource("5_op56e")
-region = Rect2(96, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5hx2"]
+atlas = ExtResource("6_bg4bi")
+region = Rect2(0, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cv7ux"]
-atlas = ExtResource("5_op56e")
-region = Rect2(128, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7252h"]
+atlas = ExtResource("6_bg4bi")
+region = Rect2(64, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wi17r"]
-atlas = ExtResource("5_op56e")
-region = Rect2(160, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mudp"]
+atlas = ExtResource("6_bg4bi")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i74un"]
+atlas = ExtResource("7_fhvpm")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_op65b"]
+atlas = ExtResource("8_2t1yf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqtqu"]
+atlas = ExtResource("8_2t1yf")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_esl8x"]
 atlas = ExtResource("5_op56e")
@@ -204,16 +219,25 @@ animations = [{
 "texture": SubResource("AtlasTexture_m1wch")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pyf7o")
+"texture": SubResource("AtlasTexture_hpsuw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s3ih5")
+"texture": SubResource("AtlasTexture_f5hx2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cv7ux")
+"texture": SubResource("AtlasTexture_7252h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wi17r")
+"texture": SubResource("AtlasTexture_4mudp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i74un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_op65b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqtqu")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_esl8x")
@@ -223,7 +247,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Poop",
-"speed": 4.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -257,7 +281,9 @@ script = ExtResource("1_4cx1o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 sprite_frames = SubResource("SpriteFrames_7nc3f")
-animation = &"Run"
+animation = &"Poop"
+frame = 10
+frame_progress = 1.0
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -270,13 +296,12 @@ shape = SubResource("RectangleShape2D_wy1m0")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
-one_shot = true
 
 [node name="Audio_SFX" type="AudioStreamPlayer2D" parent="."]
 volume_db = -7.0
 pitch_scale = 2.0
 
 [node name="Audio_Music" type="AudioStreamPlayer2D" parent="."]
-volume_db = -29.714
+volume_db = -23.962
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

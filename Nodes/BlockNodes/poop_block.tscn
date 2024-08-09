@@ -6,9 +6,12 @@
 size = Vector2(32, 32)
 
 [node name="Poop_Block" type="StaticBody2D"]
+z_index = -2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = -2
 shape = SubResource("RectangleShape2D_wvji3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
 texture = ExtResource("1_gxm5b")
