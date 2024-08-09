@@ -262,6 +262,7 @@ text = "Press \"S\" to Remove
 The Food INSIDE
 He-He"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Signs/Label"]
 layout_mode = 0
@@ -275,6 +276,7 @@ theme_override_colors/font_outline_color = Color(0.427493, 0.427493, 0.427493, 1
 text = "Click To place 
 Block!"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Signs/Label/Label"]
 layout_mode = 0
@@ -289,6 +291,7 @@ text = "If you get \"Stuck\"
 Press \"R\"
 Good Luck!"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Taco" parent="." instance=ExtResource("4_bevw6")]
 position = Vector2(-125, 52)
