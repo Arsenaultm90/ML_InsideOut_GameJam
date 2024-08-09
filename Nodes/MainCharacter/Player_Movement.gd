@@ -54,7 +54,8 @@ func _on_area_entered(colArea: Area2D) -> void:
 		collision_node = colArea
 		GlobalManager.numOfBlocks += 1
 	elif colArea.is_in_group("Killzone"):
-		$Timer.start()
+		if $Timer.is_stopped():
+			$Timer.start()
 		
 func _on_timer_timeout():
 	GlobalManager.activeBlock = false
@@ -65,6 +66,9 @@ func _physics_process(delta):
 	if GlobalManager.activeBlock == true:
 		block_sprite.position = get_global_mouse_position()
 		
+	if !$Audio_Music.is_playing():
+		$Audio_Music.play()
+	
 	if !$Audio_SFX.is_playing() and soundCurrent == soundRunning:
 		$Audio_SFX.stream = soundCurrent
 		$Audio_SFX.play()

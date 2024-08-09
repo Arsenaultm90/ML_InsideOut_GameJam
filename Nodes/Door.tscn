@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bu5ofurvfgtac"]
+[gd_scene load_steps=12 format=3 uid="uid://bu5ofurvfgtac"]
 
 [ext_resource type="Texture2D" uid="uid://cnglap64e7igc" path="res://Art/Environment/orbt.png" id="1_8nxc1"]
 [ext_resource type="Script" path="res://Nodes/NextLevel.gd" id="1_eoicp"]
+[ext_resource type="PackedScene" uid="uid://dv6lds0oelym6" path="res://Scenes/Anim_SceneTransition.tscn" id="3_peusf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g8fsk"]
 atlas = ExtResource("1_8nxc1")
@@ -71,4 +72,6 @@ frame_progress = 0.0179682
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_d6p54")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="SceneTransitionRect" parent="." instance=ExtResource("3_peusf")]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

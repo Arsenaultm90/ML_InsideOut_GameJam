@@ -17,7 +17,7 @@ config/icon="res://Art/Food/tac2o.png"
 
 [autoload]
 
-GlobalManager="*res://global_manager.gd"
+GlobalManager="*res://Scripts/global_manager.gd"
 
 [display]
 

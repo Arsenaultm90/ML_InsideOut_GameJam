@@ -1,13 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://me1g6ewkci3j"]
-
-[ext_resource type="Script" path="res://Nodes/killzone.gd" id="1_31lbu"]
+[gd_scene load_steps=2 format=3 uid="uid://me1g6ewkci3j"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1dh56"]
 b = Vector2(126, 0)
 
 [node name="Killzones" type="Area2D" groups=["Killzone"]]
 collision_layer = 3
-script = ExtResource("1_31lbu")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
