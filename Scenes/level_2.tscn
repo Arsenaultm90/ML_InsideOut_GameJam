@@ -1,14 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://cpu763mf201ol"]
+[gd_scene load_steps=14 format=3 uid="uid://cpu763mf201ol"]
 
 [ext_resource type="PackedScene" uid="uid://cp5rdw1riyqvl" path="res://Nodes/MainCharacter/MainCharacter.tscn" id="1_qvrph"]
 [ext_resource type="Texture2D" uid="uid://b375q3sisd0rx" path="res://Art/Environment/tilesetinout.png" id="2_hriu4"]
 [ext_resource type="PackedScene" uid="uid://bhgxxn14xrymr" path="res://Nodes/FoodNodes/taco.tscn" id="4_0f4o8"]
 [ext_resource type="PackedScene" uid="uid://c7mmomcmdg07i" path="res://Nodes/FoodNodes/Pie.tscn" id="5_swxq8"]
 [ext_resource type="PackedScene" uid="uid://bu5ofurvfgtac" path="res://Nodes/Door.tscn" id="6_xhmu8"]
-[ext_resource type="PackedScene" uid="uid://kw6swu836y8n" path="res://Nodes/FoodNodes/Chicken.tscn" id="7_xoehy"]
-[ext_resource type="PackedScene" uid="uid://cbe6mc3gmoamf" path="res://Nodes/FoodNodes/Glizzy.tscn" id="8_l1a1m"]
+[ext_resource type="PackedScene" uid="uid://copjkasqoo4ko" path="res://Nodes/FoodNodes/Chicken.tscn" id="7_xoehy"]
+[ext_resource type="PackedScene" uid="uid://j5sws60adg5w" path="res://Nodes/FoodNodes/Glizzy.tscn" id="8_l1a1m"]
 [ext_resource type="PackedScene" uid="uid://de7xejlpkhsjl" path="res://Nodes/FoodNodes/Cookie.tscn" id="9_uqicd"]
 [ext_resource type="PackedScene" uid="uid://me1g6ewkci3j" path="res://Nodes/killzone.tscn" id="10_3em0m"]
+[ext_resource type="AnimationLibrary" uid="uid://be04n4bsrr5an" path="res://Anim/SceneTransition.res" id="10_tvjm4"]
+[ext_resource type="PackedScene" uid="uid://dv6lds0oelym6" path="res://Scenes/Anim_SceneTransition.tscn" id="11_g6t30"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wllst"]
 texture = ExtResource("2_hriu4")
@@ -386,7 +388,7 @@ physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_wllst")
 
-[node name="Level1" type="Node"]
+[node name="Level2" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource("1_qvrph")]
 position = Vector2(-254, -123)
@@ -443,3 +445,11 @@ position = Vector2(178, 1)
 
 [node name="Killzones3" parent="Killzones3/Killzones3/Killzones3/Killzones3" instance=ExtResource("10_3em0m")]
 position = Vector2(108, -1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"SceneTransition": ExtResource("10_tvjm4")
+}
+
+[node name="SceneTransitionRect" parent="." instance=ExtResource("11_g6t30")]
+color = Color(0, 0, 0, 0)

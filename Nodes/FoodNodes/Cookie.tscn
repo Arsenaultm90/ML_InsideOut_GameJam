@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://de7xejlpkhsjl"]
+[gd_scene load_steps=3 format=3 uid="uid://de7xejlpkhsjl"]
 
-[ext_resource type="Script" path="res://Nodes/MainCharacter/CollisionDetection.gd" id="1_km5il"]
 [ext_resource type="Texture2D" uid="uid://bfxs2oku2c46n" path="res://Art/Food/cookie.png" id="2_o35gw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvu8w"]
@@ -9,7 +8,6 @@ size = Vector2(2, 6.125)
 [node name="Cookie" type="Area2D" groups=["Food"]]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_km5il")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -3)
