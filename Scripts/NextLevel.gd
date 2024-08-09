@@ -20,6 +20,7 @@ func _on_area_entered(area):
 		$SceneTransitionRect.z_index = 20
 		animator.play("SceneTransition/fade")
 
+# Need to connect signal to Door node
 func _on_animation_player_animation_finished(anim_name):
 	print("Animation done")
 	if anim_name == "SceneTransition/fade":
