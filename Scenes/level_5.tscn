@@ -525,9 +525,10 @@ offset_top = -615.0
 offset_right = -1023.0
 offset_bottom = -615.0
 mouse_filter = 2
-color = Color(0, 0, 0, 0.1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "SceneTransition": ExtResource("10_sjiv4")
 }
+
+[connection signal="animation_finished" from="AnimationPlayer" to="Door" method="_on_animation_player_animation_finished"]
