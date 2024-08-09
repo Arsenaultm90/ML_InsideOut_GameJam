@@ -249,7 +249,7 @@ size = Vector2(37, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wy1m0"]
 size = Vector2(22, 31)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_4cx1o")
 
@@ -272,7 +272,8 @@ shape = SubResource("RectangleShape2D_wy1m0")
 wait_time = 2.0
 
 [node name="Audio_SFX" type="AudioStreamPlayer2D" parent="."]
-volume_db = -9.41
+volume_db = -7.0
+pitch_scale = 2.0
 
 [node name="Audio_Music" type="AudioStreamPlayer2D" parent="."]
 volume_db = -23.962

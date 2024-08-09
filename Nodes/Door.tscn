@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bu5ofurvfgtac"]
+[gd_scene load_steps=11 format=3 uid="uid://bu5ofurvfgtac"]
 
 [ext_resource type="Texture2D" uid="uid://cnglap64e7igc" path="res://Art/Environment/orbt.png" id="1_8nxc1"]
+[ext_resource type="Script" path="res://Nodes/NextLevel.gd" id="1_eoicp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g8fsk"]
 atlas = ExtResource("1_8nxc1")
@@ -55,7 +56,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_d6p54"]
 radius = 6.0
 
-[node name="Door" type="Node2D"]
+[node name="NextLevel" type="Area2D"]
+collision_layer = 3
+script = ExtResource("1_eoicp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7)
@@ -64,6 +67,8 @@ animation = &"DoorLoop"
 autoplay = "DoorLoop"
 frame_progress = 0.0179682
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
-position = Vector2(0, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_d6p54")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
