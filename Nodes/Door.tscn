@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bu5ofurvfgtac"]
 
 [ext_resource type="Texture2D" uid="uid://cnglap64e7igc" path="res://Art/Environment/orbt.png" id="1_8nxc1"]
-[ext_resource type="Script" path="res://Nodes/NextLevel.gd" id="1_eoicp"]
+[ext_resource type="Script" path="res://Scripts/NextLevel.gd" id="1_lvkev"]
 [ext_resource type="PackedScene" uid="uid://dv6lds0oelym6" path="res://Scenes/Anim_SceneTransition.tscn" id="3_peusf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g8fsk"]
@@ -59,7 +59,7 @@ radius = 6.0
 
 [node name="NextLevel" type="Area2D"]
 collision_layer = 3
-script = ExtResource("1_eoicp")
+script = ExtResource("1_lvkev")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7)
