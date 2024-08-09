@@ -12,12 +12,20 @@ var input_locked: bool = false
 var collision_node : Area2D = null;
 var Sprite2DScene : PackedScene = preload("res://Nodes/BlockNodes/poop_block.tscn")
 var block_sprite : StaticBody2D
+var soundCurrent = soundRunning
+var soundRunning = preload("res://Sounds/Running.mp3")
+var soundFart = preload("res://Sounds/Fart.mp3")
+var soundChomp = preload("res://Sounds/Chomp.mp3")
+var musicMain = preload("res://Sounds/PixelDream.mp3")
 
-
+# Setup signals for collision and sprite animations
 func _ready():
 	area.connect("area_entered", Callable(self, "_on_area_entered"))
 	sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
+	$Audio_Music.stream = musicMain
+	$Audio_Music.play()
 	
+# Proceeds with resuming the game once the animation finishes
 func _on_animation_finished() -> void:
 	if current_animation == "Poop":
 		GlobalManager.numOfBlocks -= 1
@@ -41,6 +49,8 @@ func _on_area_entered(colArea: Area2D) -> void:
 	if colArea.is_in_group("Food"):  # Ensure your StaticBody2D is in this group
 		state = States.EATING
 		set_state(state)
+		$Audio_SFX.stream = soundChomp
+		$Audio_SFX.play()
 		collision_node = colArea
 		GlobalManager.numOfBlocks += 1
 	elif colArea.is_in_group("Killzone"):
@@ -54,6 +64,10 @@ func _on_timer_timeout():
 func _physics_process(delta):
 	if GlobalManager.activeBlock == true:
 		block_sprite.position = get_global_mouse_position()
+		
+	if !$Audio_SFX.is_playing() and soundCurrent == soundRunning:
+		$Audio_SFX.stream = soundCurrent
+		$Audio_SFX.play()
 		
 	if Input.is_action_just_pressed("Reset"):
 		GlobalManager.activeBlock = false
@@ -76,6 +90,8 @@ func _physics_process(delta):
 		# Determine the new state based on input and current state
 		if is_pooping_blocks:
 			state = States.POOP
+			$Audio_SFX.stream = soundFart
+			$Audio_SFX.play()
 		elif is_initiating_jump:
 			GlobalManager.inAir = true
 			state = States.JUMPING
@@ -96,6 +112,8 @@ func _physics_process(delta):
 			elif direction == 1:
 				sprite.flip_h = false
 			velocity.x = direction * SPEED
+			if !$Audio_SFX.is_playing():
+				$Audio_SFX.stream = soundRunning
 		elif state == States.JUMPING:
 			# Set a jump force if in the JUMPING state
 			if is_on_floor():  # Only apply the jump force if on the floor

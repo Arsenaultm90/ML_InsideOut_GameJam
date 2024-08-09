@@ -269,6 +269,12 @@ position = Vector2(2, 0.5)
 shape = SubResource("RectangleShape2D_wy1m0")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 2.0
+
+[node name="Audio_SFX" type="AudioStreamPlayer2D" parent="."]
+volume_db = -9.41
+
+[node name="Audio_Music" type="AudioStreamPlayer2D" parent="."]
+volume_db = -23.962
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
