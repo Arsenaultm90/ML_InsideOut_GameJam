@@ -1,10 +1,10 @@
-extends Area2D
+extends Node
 
 const FILE_BEGIN = "res://Scenes/level_"
 var current_scene_file : String = ""
 var next_level_path : String = ""
 
-@onready var sceneTransition = $SceneTransitionRect/AnimationPlayer
+@onready var sceneTransition = $AnimationPlayer
 
 func _ready() -> void:
 	current_scene_file = str(get_tree().current_scene.scene_file_path.to_int() + 1)
@@ -23,3 +23,7 @@ func _on_animation_finished(anim_name : String):
 	print(anim_name)
 	if anim_name == "Fade":
 		get_tree().change_scene_to_file(next_level_path)
+
+
+func _on_animation_player_animation_finished(anim_name):
+	pass # Replace with function body.
