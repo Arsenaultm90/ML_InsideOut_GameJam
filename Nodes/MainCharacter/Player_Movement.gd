@@ -165,3 +165,7 @@ func play_animation(anim_name: String) -> void:
 			input_locked = true  # Disable input while the animation is playing
 		sprite.play(anim_name)
 		
+
+
+func _on_animation_player_animation_finished(anim_name):
+	pass # Replace with function body.

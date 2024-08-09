@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://n1tgvtfwv2ge"
-path="res://.godot/imported/Fart.mp3-918edb538009b96ccc9349318e9616bf.mp3str"
+path="res://.godot/imported/fart.mp3-4fe69a19f45967b6370a65d0838379b6.mp3str"
 
 [deps]
 
-source_file="res://Sounds/Fart.mp3"
-dest_files=["res://.godot/imported/Fart.mp3-918edb538009b96ccc9349318e9616bf.mp3str"]
+source_file="res://Sounds/fart.mp3"
+dest_files=["res://.godot/imported/fart.mp3-4fe69a19f45967b6370a65d0838379b6.mp3str"]
 
 [params]
 

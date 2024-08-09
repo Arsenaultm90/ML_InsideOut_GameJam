@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://bu5ofurvfgtac"]
 
 [ext_resource type="Texture2D" uid="uid://cnglap64e7igc" path="res://Art/Environment/orbt.png" id="1_8nxc1"]
-[ext_resource type="Script" path="res://Scripts/NextLevel.gd" id="1_lvkev"]
-[ext_resource type="PackedScene" uid="uid://dv6lds0oelym6" path="res://Scenes/Anim_SceneTransition.tscn" id="3_peusf"]
+[ext_resource type="Script" path="res://Scripts/NextLevel.gd" id="1_eoicp"]
+[ext_resource type="PackedScene" uid="uid://cqnv2t2ayp77s" path="res://Scenes/Anim_SceneTransition.tscn" id="3_mo3pa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g8fsk"]
 atlas = ExtResource("1_8nxc1")
@@ -59,7 +59,7 @@ radius = 6.0
 
 [node name="NextLevel" type="Area2D"]
 collision_layer = 3
-script = ExtResource("1_lvkev")
+script = ExtResource("1_eoicp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7)
@@ -72,6 +72,6 @@ frame_progress = 0.0179682
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_d6p54")
 
-[node name="SceneTransitionRect" parent="." instance=ExtResource("3_peusf")]
+[node name="SceneTransitionRect" parent="." instance=ExtResource("3_mo3pa")]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
