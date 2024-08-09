@@ -3,7 +3,7 @@ extends Node
 signal world_changed(world_name)
 var entered = false
 
-export (String) var world_name = "world"
+@export var world_name : String = "world"
 
 func _process(delta):
 	if entered == true:

@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://52ov75jhynw7"]
+[gd_scene load_steps=8 format=3 uid="uid://52ov75jhynw7"]
 
-[ext_resource type="Script" path="res://Scenes/LevelManager.gd" id="1_1ih3i"]
 [ext_resource type="PackedScene" uid="uid://cp5rdw1riyqvl" path="res://Nodes/MainCharacter/MainCharacter.tscn" id="1_65ckt"]
 [ext_resource type="Texture2D" uid="uid://eht2splcjbmg" path="res://Art/Environment/TestGround.png" id="2_h86al"]
 [ext_resource type="PackedScene" uid="uid://bhgxxn14xrymr" path="res://Nodes/FoodNodes/taco.tscn" id="4_bdf1l"]
@@ -13,7 +12,6 @@
 size = Vector2(633, 21)
 
 [node name="MainLevel" type="Node2D"]
-script = ExtResource("1_1ih3i")
 
 [node name="Player" parent="." instance=ExtResource("1_65ckt")]
 
