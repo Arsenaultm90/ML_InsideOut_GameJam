@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bp430sg40yjkk"]
+[gd_scene load_steps=15 format=3 uid="uid://bp430sg40yjkk"]
 
 [ext_resource type="PackedScene" uid="uid://cp5rdw1riyqvl" path="res://Nodes/MainCharacter/MainCharacter.tscn" id="1_qvrph"]
 [ext_resource type="Texture2D" uid="uid://b375q3sisd0rx" path="res://Art/Environment/tilesetinout.png" id="2_hriu4"]
 [ext_resource type="PackedScene" uid="uid://bhgxxn14xrymr" path="res://Nodes/FoodNodes/taco.tscn" id="4_0f4o8"]
+[ext_resource type="Texture2D" uid="uid://bxp1l0wu7nxm8" path="res://Art/Environment/CroissantDoor.png" id="4_m5p5x"]
 [ext_resource type="PackedScene" uid="uid://c7mmomcmdg07i" path="res://Nodes/FoodNodes/Pie.tscn" id="5_swxq8"]
 [ext_resource type="PackedScene" uid="uid://bu5ofurvfgtac" path="res://Nodes/Door.tscn" id="6_xhmu8"]
 [ext_resource type="PackedScene" uid="uid://copjkasqoo4ko" path="res://Nodes/FoodNodes/Chicken.tscn" id="7_xoehy"]
@@ -491,7 +492,7 @@ sources/0 = SubResource("TileSetAtlasSource_wllst")
 [node name="Level2" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource("1_qvrph")]
-position = Vector2(-9, -56)
+position = Vector2(-257, -120)
 collision_layer = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -513,6 +514,11 @@ layer_2/tile_data = PackedInt32Array(-655380, 393216, 2, -589844, 393216, 3, -65
 
 [node name="Door" parent="." instance=ExtResource("6_xhmu8")]
 position = Vector2(278, 41)
+
+[node name="CroissantDoor" type="Sprite2D" parent="."]
+position = Vector2(278, 32)
+scale = Vector2(1.72222, 1.72222)
+texture = ExtResource("4_m5p5x")
 
 [node name="Food" type="Node" parent="."]
 
@@ -553,4 +559,9 @@ libraries = {
 }
 
 [node name="SceneTransitionRect" parent="." instance=ExtResource("11_g6t30")]
-color = Color(0, 0, 0, 0.1)
+offset_left = -931.0
+offset_top = -628.0
+offset_right = -931.0
+offset_bottom = -628.0
+
+[connection signal="animation_finished" from="AnimationPlayer" to="Door" method="_on_animation_player_animation_finished"]

@@ -55,21 +55,21 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d6p54"]
-radius = 6.0
+radius = 9.0
 
 [node name="NextLevel" type="Area2D"]
 collision_layer = 3
 script = ExtResource("1_eoicp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_vsu14")
 animation = &"DoorLoop"
 autoplay = "DoorLoop"
 frame_progress = 0.0179682
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_d6p54")
 
 [node name="SceneTransitionRect" parent="." instance=ExtResource("3_mo3pa")]

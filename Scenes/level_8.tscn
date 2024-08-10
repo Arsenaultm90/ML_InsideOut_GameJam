@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://cxopvtr4bcepl"]
+[gd_scene load_steps=16 format=3 uid="uid://cxopvtr4bcepl"]
 
 [ext_resource type="PackedScene" uid="uid://cp5rdw1riyqvl" path="res://Nodes/MainCharacter/MainCharacter.tscn" id="1_3kqga"]
 [ext_resource type="Texture2D" uid="uid://b375q3sisd0rx" path="res://Art/Environment/tilesetinout.png" id="2_bhwjx"]
 [ext_resource type="PackedScene" uid="uid://bu5ofurvfgtac" path="res://Nodes/Door.tscn" id="3_vxv2i"]
 [ext_resource type="PackedScene" uid="uid://copjkasqoo4ko" path="res://Nodes/FoodNodes/Chicken.tscn" id="4_2tda4"]
+[ext_resource type="PackedScene" uid="uid://me1g6ewkci3j" path="res://Nodes/killzone.tscn" id="4_tim8a"]
 [ext_resource type="PackedScene" uid="uid://j5sws60adg5w" path="res://Nodes/FoodNodes/Glizzy.tscn" id="5_4qmk2"]
 [ext_resource type="PackedScene" uid="uid://de7xejlpkhsjl" path="res://Nodes/FoodNodes/Cookie.tscn" id="6_a1bon"]
 [ext_resource type="PackedScene" uid="uid://c7mmomcmdg07i" path="res://Nodes/FoodNodes/Pie.tscn" id="7_f787s"]
@@ -490,6 +491,25 @@ layer_2/tile_data = PackedInt32Array(-655380, 262144, 14, -589844, 262144, 15, -
 
 [node name="Door" parent="." instance=ExtResource("3_vxv2i")]
 position = Vector2(-259, -62)
+
+[node name="Killzones5" type="Node" parent="."]
+
+[node name="Killzones" parent="Killzones5" instance=ExtResource("4_tim8a")]
+position = Vector2(-300, -10)
+
+[node name="Killzones2" parent="Killzones5" instance=ExtResource("4_tim8a")]
+position = Vector2(-21, 155)
+scale = Vector2(2.64, 1)
+
+[node name="Killzones3" parent="Killzones5" instance=ExtResource("4_tim8a")]
+position = Vector2(-22, -1)
+rotation = -1.57079
+scale = Vector2(0.48, 1)
+
+[node name="Killzones4" parent="Killzones5" instance=ExtResource("4_tim8a")]
+position = Vector2(-166, -115)
+rotation = -1.57079
+scale = Vector2(0.48, 1)
 
 [node name="Food" type="Node" parent="."]
 

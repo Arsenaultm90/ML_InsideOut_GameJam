@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dc1lucf00o08k"]
+[gd_scene load_steps=15 format=3 uid="uid://dc1lucf00o08k"]
 
 [ext_resource type="PackedScene" uid="uid://cp5rdw1riyqvl" path="res://Nodes/MainCharacter/MainCharacter.tscn" id="1_fvsiu"]
 [ext_resource type="Texture2D" uid="uid://b375q3sisd0rx" path="res://Art/Environment/tilesetinout.png" id="2_35qnw"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cqnv2t2ayp77s" path="res://Scenes/Anim_SceneTransition.tscn" id="9_x1wqt"]
 [ext_resource type="AnimationLibrary" uid="uid://be04n4bsrr5an" path="res://Anim/SceneTransition.res" id="10_sjiv4"]
 [ext_resource type="Texture2D" uid="uid://bxp1l0wu7nxm8" path="res://Art/Environment/CroissantDoor.png" id="11_e3hh3"]
+[ext_resource type="PackedScene" uid="uid://me1g6ewkci3j" path="res://Nodes/killzone.tscn" id="12_ureun"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iw2ab"]
 texture = ExtResource("2_35qnw")
@@ -515,7 +516,7 @@ position = Vector2(272, 150)
 position = Vector2(290, 149)
 
 [node name="CroissantDoor" type="Sprite2D" parent="Food"]
-position = Vector2(-68, -166)
+position = Vector2(-68, -165)
 scale = Vector2(1.11111, 1.11111)
 texture = ExtResource("11_e3hh3")
 
@@ -530,5 +531,25 @@ mouse_filter = 2
 libraries = {
 "SceneTransition": ExtResource("10_sjiv4")
 }
+
+[node name="Killzones" parent="." instance=ExtResource("12_ureun")]
+position = Vector2(-32, 165)
+scale = Vector2(2.24, 1)
+
+[node name="Killzones" parent="Killzones" instance=ExtResource("12_ureun")]
+position = Vector2(-84.8215, -79)
+scale = Vector2(0.436425, 1)
+
+[node name="Killzones" parent="Killzones/Killzones" instance=ExtResource("12_ureun")]
+position = Vector2(-21.4814, -130)
+scale = Vector2(0.436425, 1)
+
+[node name="Killzones" parent="Killzones/Killzones/Killzones" instance=ExtResource("12_ureun")]
+position = Vector2(1068.81, 80)
+scale = Vector2(0.436425, 1)
+
+[node name="Killzones" parent="Killzones/Killzones/Killzones/Killzones" instance=ExtResource("12_ureun")]
+position = Vector2(-440.391, 21)
+scale = Vector2(0.436425, 1)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="Door" method="_on_animation_player_animation_finished"]

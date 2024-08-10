@@ -389,15 +389,16 @@ position = Vector2(-125, 52)
 collision_layer = 1
 
 [node name="Node2D" parent="." instance=ExtResource("6_3fye4")]
-position = Vector2(234, -3)
+position = Vector2(234, 2)
 
-[node name="CroissantDoor" type="Sprite2D" parent="."]
+[node name="CroissantDoor" type="Sprite2D" parent="Node2D"]
 z_index = -1
-position = Vector2(233, -16)
+position = Vector2(-1, -19)
 scale = Vector2(1.76389, 1.76389)
 texture = ExtResource("6_7j7oa")
 
 [node name="SceneTransitionRect" parent="." instance=ExtResource("6_psw7v")]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
