@@ -17,6 +17,7 @@ var soundRunning = preload("res://Sounds/Running.mp3")
 var soundFart = preload("res://Sounds/Fart.mp3")
 var soundChomp = preload("res://Sounds/Chomp.mp3")
 var musicMain = preload("res://Sounds/PixelDream.mp3")
+var readyToMove = false
 
 # Setup signals for collision and sprite animations
 func _ready():
@@ -24,6 +25,7 @@ func _ready():
 	sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	$Audio_Music.stream = musicMain
 	$Audio_Music.play()
+	readyToMove = true
 	
 # Proceeds with resuming the game once the animation finishes
 func _on_animation_finished() -> void:
@@ -135,8 +137,9 @@ func _physics_process(delta):
 			velocity.x = direction * SPEED
 			velocity.y += GRAVITY * delta
 
-		# Call `move_and_slide` to handle movement
-		move_and_slide()
+		if readyToMove:
+			# Call `move_and_slide` to handle movement
+			move_and_slide()
 		
 		# Update the animation based on the state
 		set_state(state)
@@ -165,7 +168,3 @@ func play_animation(anim_name: String) -> void:
 			input_locked = true  # Disable input while the animation is playing
 		sprite.play(anim_name)
 		
-
-
-func _on_animation_player_animation_finished(anim_name):
-	pass # Replace with function body.

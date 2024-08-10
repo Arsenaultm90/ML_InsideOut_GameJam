@@ -398,7 +398,7 @@ scale = Vector2(1.76389, 1.76389)
 texture = ExtResource("6_7j7oa")
 
 [node name="SceneTransitionRect" parent="." instance=ExtResource("6_psw7v")]
-visible = false
+color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
