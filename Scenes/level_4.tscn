@@ -523,6 +523,15 @@ position = Vector2(187, 138)
 position = Vector2(114, 127)
 collision_layer = 1
 
+[node name="Pizza" parent="Food" instance=ExtResource("10_tkk4e")]
+position = Vector2(-275, -135)
+
+[node name="Pizza2" parent="Food" instance=ExtResource("10_tkk4e")]
+position = Vector2(-246, -134)
+
+[node name="Pizza3" parent="Food" instance=ExtResource("10_tkk4e")]
+position = Vector2(-261, -154)
+
 [node name="Killzones" parent="." instance=ExtResource("9_dhvm8")]
 position = Vector2(-233, 169)
 rotation = -1.57079
@@ -535,22 +544,12 @@ scale = Vector2(0.8, 1)
 [node name="Killzones" parent="Killzones" instance=ExtResource("9_dhvm8")]
 position = Vector2(-48.999, 464)
 
-[node name="Pizza" parent="." instance=ExtResource("10_tkk4e")]
-position = Vector2(-275, -135)
-
-[node name="Pizza2" parent="." instance=ExtResource("10_tkk4e")]
-position = Vector2(-246, -134)
-
-[node name="Pizza3" parent="." instance=ExtResource("10_tkk4e")]
-position = Vector2(-261, -154)
-
 [node name="SceneTransitionRect" parent="." instance=ExtResource("11_4uvi8")]
 offset_left = -1023.0
 offset_top = -615.0
 offset_right = -1023.0
 offset_bottom = -615.0
 mouse_filter = 2
-color = Color(0, 0, 0, 0.1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -562,3 +561,5 @@ z_index = -2
 position = Vector2(295, 38)
 scale = Vector2(1.39583, 1.39583)
 texture = ExtResource("13_jtc2w")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="Door" method="_on_animation_player_animation_finished"]

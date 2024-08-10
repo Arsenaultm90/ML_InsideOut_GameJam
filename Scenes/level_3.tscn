@@ -344,6 +344,15 @@ position = Vector2(-167, -50)
 [node name="Chicken5" parent="Food" instance=ExtResource("9_neama")]
 position = Vector2(-147, -52)
 
+[node name="Pizza2" parent="Food" instance=ExtResource("6_gxtj8")]
+position = Vector2(-235, 60)
+
+[node name="CroissantDoor" type="Sprite2D" parent="Food"]
+z_index = -3
+position = Vector2(241, -144)
+scale = Vector2(1.69444, 1.69444)
+texture = ExtResource("13_gapnp")
+
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1
 tile_set = SubResource("TileSet_ahlg4")
@@ -367,38 +376,44 @@ position = Vector2(-193, 163)
 [node name="Killzones" parent="Killzones" instance=ExtResource("10_xpkp2")]
 position = Vector2(137, 0)
 
-[node name="Killzones" parent="Killzones/Killzones" instance=ExtResource("10_xpkp2")]
-position = Vector2(168, 0)
+[node name="Killzones2" parent="Killzones" instance=ExtResource("10_xpkp2")]
+position = Vector2(305, 0)
 scale = Vector2(0.240001, 1)
 
-[node name="Killzones" parent="Killzones/Killzones/Killzones" instance=ExtResource("10_xpkp2")]
-position = Vector2(-408.332, -63)
-rotation = -1.53754
-scale = Vector2(0.240001, 1)
+[node name="Killzones3" parent="Killzones" instance=ExtResource("10_xpkp2")]
+position = Vector2(198, 1)
+rotation = -1.56281
+scale = Vector2(0.788804, 0.581113)
+skew = 0.129757
 
-[node name="Killzones" parent="Killzones/Killzones/Killzones/Killzones" instance=ExtResource("10_xpkp2")]
-position = Vector2(112.275, 599.433)
-rotation = 0.00701153
-scale = Vector2(0.407914, 1)
+[node name="Killzones4" parent="Killzones" instance=ExtResource("10_xpkp2")]
+position = Vector2(168, -198)
+rotation = -1.55769
+scale = Vector2(0.482056, 0.581841)
+skew = 0.134057
 
-[node name="Pizza" parent="." instance=ExtResource("6_gxtj8")]
-position = Vector2(-235, 60)
+[node name="Killzones5" parent="Killzones" instance=ExtResource("10_xpkp2")]
+position = Vector2(348, -79)
+rotation = 1.56892
+scale = Vector2(0.0933385, -0.240121)
+skew = -0.0306518
 
 [node name="SceneTransitionRect" parent="." instance=ExtResource("11_ej5x3")]
+visible = false
 offset_left = -1023.0
 offset_top = -615.0
 offset_right = -1023.0
 offset_bottom = -615.0
 mouse_filter = 2
-color = Color(0, 0, 0, 0.1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "SceneTransition": ExtResource("12_i4xl1")
 }
 
-[node name="CroissantDoor" type="Sprite2D" parent="."]
-z_index = -3
-position = Vector2(241, -144)
-scale = Vector2(1.69444, 1.69444)
-texture = ExtResource("13_gapnp")
+[node name="Killzones2" parent="." instance=ExtResource("10_xpkp2")]
+position = Vector2(182, -38)
+rotation = -1.57762
+scale = Vector2(0.479995, 1)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="Node2D" method="_on_animation_player_animation_finished"]
