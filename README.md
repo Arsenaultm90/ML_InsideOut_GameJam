@@ -1,4 +1,4 @@
-# ML_InsideOut_GameJam
+# Inside Out GameJam!
 <a id="readme-top"></a>
 
 <!-- PROJECT LOGO -->
@@ -7,7 +7,7 @@
   <a href="https://itch.io/jam/do-you-wanna-jam-2024">
 	<img src="ReadMeResources/DoYouWANNAJam.png" alt="Logo" width="700" height="350">
   </a>
-  <br> 
+  <br>
   <img src="ReadMeResources/InsideOut.png" alt="Inside Out Logo" width="250" height="100">
 </div>
 
@@ -15,25 +15,18 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Content + GIFS here!
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+This is a 2D Platformer in the theme of 'Inside Out' where the protaganist will eat food and turn it into solid block of excrement for the player to jump on.
 
 
 ### Built With
 
-* ![Godot Engine](https://img.shields.io/badge/GODOT-%23FFFFFF.svg?style=for-the-badge&logo=godot-engine)
-* ![Aseprite](https://img.shields.io/badge/Aseprite-FFFFFF?style=for-the-badge&logo=Aseprite&logoColor=#7D929E)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+![Godot Engine](https://img.shields.io/badge/GODOT-%23FFFFFF.svg?style=for-the-badge&logo=godot-engine)
+![Aseprite](https://img.shields.io/badge/Aseprite-FFFFFF?style=for-the-badge&logo=Aseprite&logoColor=#7D929E)
 
 
+<!-- Developers & Artists -->
+## Artists and Developers
 
-<!-- CONTACT -->
-## Contact
-
-Your Name - 
-
-Project Link: 
-
+[Luke Lavictoire - Artist](https://github.com/LukeLavictoire)
+[Matt Arsenault - Developer](https://github.com/Arsenaultm90)
