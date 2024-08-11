@@ -29,4 +29,5 @@ This is a 2D Platformer in the theme of 'Inside Out' where the protaganist will 
 ## Artists and Developers
 
 [Luke Lavictoire - Artist](https://github.com/LukeLavictoire)
+<br>
 [Matt Arsenault - Developer](https://github.com/Arsenaultm90)
