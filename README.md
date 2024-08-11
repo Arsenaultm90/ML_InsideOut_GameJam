@@ -16,7 +16,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/UQWzhVI" data-context="false" ><a href="//imgur.com/a/UQWzhVI"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 This is a 2D Platformer in the theme of 'Inside Out' where the protaganist will eat food and turn it into solid block of excrement for the player to jump on.
 
 
