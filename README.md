@@ -11,7 +11,8 @@
   <img src="ReadMeResources/InsideOut.png" alt="Inside Out Logo" width="250" height="100">
 </div>
 
-
+## How To Play
+"Itch.io Link"
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -19,7 +20,7 @@
 This is a 2D Platformer in the theme of 'Inside Out' where the protaganist will eat food and turn it into solid block of excrement for the player to jump on.
 
 
-### Built With
+## Built With
 
 ![Godot Engine](https://img.shields.io/badge/GODOT-%23FFFFFF.svg?style=for-the-badge&logo=godot-engine)
 ![Aseprite](https://img.shields.io/badge/Aseprite-FFFFFF?style=for-the-badge&logo=Aseprite&logoColor=#7D929E)
