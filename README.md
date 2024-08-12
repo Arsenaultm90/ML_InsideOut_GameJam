@@ -12,7 +12,7 @@
 </div>
 
 ## How To Play
-"Itch.io Link"
+![Inside Out](https://lukemm12.itch.io/inside-out)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
