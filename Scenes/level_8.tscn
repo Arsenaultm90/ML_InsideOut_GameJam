@@ -571,3 +571,5 @@ texture = ExtResource("10_o6nyq")
 libraries = {
 "SceneTransition": ExtResource("12_jnbgl")
 }
+
+[connection signal="animation_finished" from="AnimationPlayer" to="Door" method="_on_animation_player_animation_finished"]
